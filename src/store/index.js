@@ -14,11 +14,9 @@ const counterReducer = (state = { counter: 0 }, action) => {
       counter: action.counter - 1,
     };
   }
+  return state;
 };
 
-const store = redux.createStore(counterReducer);
-
-store.dispatch({ type: "increment" });
-store.dispatch({ type: "decrement" });
+const store = createStore(counterReducer);
 
 export default store;
